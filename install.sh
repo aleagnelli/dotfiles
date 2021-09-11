@@ -2,6 +2,9 @@
 
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+mkdir ~/.npm-global
+npm config set prefix '~/.npm-global'
+
 for file in vimrc zshrc tmux.conf; do
 	ln -s "${BASEDIR}/$file" ~/.$file
 done
